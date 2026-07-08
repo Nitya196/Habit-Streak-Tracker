@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker · 30‑day calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header>
+      <h1> Habit Tracker</h1>
+      <p class="subhead">30‑day view · daily progress & streaks</p>
+    </header>
+
+    <!-- Add habit form -->
+    <section class="add-habit">
+      <input type="text" id="habitInput" placeholder="e.g. Morning run, Read 20 pages..." maxlength="40">
+      <button id="addBtn">➕ Add habit</button>
+    </section>
+
+    <!-- Habits grid -->
+    <section id="habitsContainer" class="habits-grid">
+      <!-- dynamically rendered -->
+    </section>
+
+    <!-- Footer info -->
+    <footer>
+      <span> data saved in your browser</span>
+      <button id="resetBtn" class="reset-btn">🗑️ Reset all data</button>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
