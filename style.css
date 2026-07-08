@@ -1,0 +1,259 @@
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f4fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app {
+  max-width: 1100px;
+  width: 100%;
+  background: white;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  padding: 2rem 1.8rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b1a33;
+}
+
+.subhead {
+  color: #4b5b73;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+}
+
+/* add habit */
+.add-habit {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.add-habit input {
+  flex: 1 1 220px;
+  padding: 0.7rem 1rem;
+  border: 1px solid #d9e0eb;
+  border-radius: 40px;
+  font-size: 1rem;
+  background: #f8faff;
+  transition: 0.2s;
+}
+
+.add-habit input:focus {
+  outline: none;
+  border-color: #2c6bff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(44, 107, 255, 0.15);
+}
+
+.add-habit button {
+  background: #1a2b4a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 4px 8px rgba(0, 20, 50, 0.08);
+}
+
+.add-habit button:hover {
+  background: #2c3f64;
+  transform: scale(1.01);
+}
+
+/* habits grid */
+.habits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.habit-card {
+  background: #f9fcff;
+  border-radius: 1.5rem;
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+  border: 1px solid #e7edf6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  transition: 0.15s;
+}
+
+.habit-card:hover {
+  border-color: #cdd9eb;
+}
+
+.habit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.habit-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #0e1f3b;
+  word-break: break-word;
+}
+
+.streak-badge {
+  background: #eef3ff;
+  color: #1f4fcf;
+  padding: 0.25rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.streak-badge span {
+  font-size: 1rem;
+}
+
+/* 30-day calendar grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 4px;
+  margin-top: 0.5rem;
+}
+
+.day-cell {
+  aspect-ratio: 1 / 1;
+  background: #edf2f9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #1a2f4a;
+  cursor: pointer;
+  transition: 0.1s ease;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+/* cell states */
+.day-cell.today {
+  border: 2px solid #2c6bff;
+  background: #e5edff;
+}
+
+.day-cell.done {
+  background: #1e7b4c;
+  color: white;
+}
+
+.day-cell.done.today {
+  background: #1a6b40;
+  border-color: #0f4a2a;
+}
+
+.day-cell.future {
+  background: #f0f4fb;
+  color: #8899b0;
+  cursor: default;
+}
+
+.day-cell.missed {
+  background: #ffe7e7;
+  color: #b13e3e;
+}
+
+.day-cell:hover:not(.future) {
+  transform: scale(0.95);
+  border-color: #2c6bff;
+}
+
+/* small day number label */
+.day-label {
+  font-size: 0.55rem;
+  opacity: 0.5;
+  margin-right: 1px;
+}
+
+/* footer */
+footer {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e2eaf2;
+  padding-top: 1.5rem;
+  color: #5b6f88;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid #d5dee9;
+  padding: 0.4rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  color: #4f657f;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.reset-btn:hover {
+  background: #ffebee;
+  border-color: #d44;
+  color: #a33;
+}
+
+/* empty state */
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #6b7f98;
+  background: #f8fbfe;
+  border-radius: 2rem;
+  border: 1px dashed #cbd8e8;
+}
+
+/* responsive */
+@media (max-width: 700px) {
+  .app {
+    padding: 1.5rem 1rem;
+  }
+  .days-grid {
+    gap: 3px;
+  }
+  .day-cell {
+    font-size: 0.45rem;
+    border-radius: 4px;
+  }
+  .habit-card {
+    padding: 0.8rem 0.8rem 1rem;
+  }
+  }
